@@ -104,7 +104,7 @@ variable "backend_addr_pool" {}
 variable "web_vm_id" {}
 variable "app_vm_id" {}
 
-variable "vpn_pip_name" {}
-variable "vir_nw_gw" {}
+#variable "vpn_pip_name" {}
+#variable "vir_nw_gw" {}
 
-variable "vpn_client_root_cert_path" {}
+#variable "vpn_client_root_cert_path" {}
