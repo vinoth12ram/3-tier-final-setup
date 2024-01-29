@@ -99,15 +99,15 @@ module "monitor" {
   resource_group  = data.azurerm_resource_group.this.name
 }
 
-module "vpn" {
-  source = "./vpn"
-  vpn_pip_name = var.vpn_pip_name
-  vir_nw_gw = var.vir_nw_gw
-  location        = data.azurerm_resource_group.this.location
-  resource_group  = data.azurerm_resource_group.this.name
-  vpn_client_root_cert_content = local.root_cert
-}
+#module "vpn" {
+#  source = "./vpn"
+#  vpn_pip_name = var.vpn_pip_name
+#  vir_nw_gw = var.vir_nw_gw
+#  location        = data.azurerm_resource_group.this.location
+#  resource_group  = data.azurerm_resource_group.this.name
+#  vpn_client_root_cert_content = local.root_cert
+#}
 
-locals {
-  root_cert = module.vpn.rootcert
-}
+#locals {
+#  root_cert = module.vpn.rootcert
+#}
