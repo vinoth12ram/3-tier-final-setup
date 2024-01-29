@@ -108,3 +108,5 @@ variable "app_vm_id" {}
 #variable "vir_nw_gw" {}
 
 #variable "vpn_client_root_cert_path" {}
+
+variable "email_id" {}
