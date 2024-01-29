@@ -33,6 +33,6 @@ output "app_vm_id" {
   description = "Id of app vm"
 }
 
-output "root_output_variable" {
-  value = local.root_cert
-}
+#output "root_output_variable" {
+#  value = local.root_cert
+#}
