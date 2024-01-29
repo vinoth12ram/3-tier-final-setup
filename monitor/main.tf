@@ -5,7 +5,7 @@ resource "azurerm_monitor_action_group" "email-alert" {
 
   email_receiver {
     name                    = "sendtocloudops"
-    email_address           = "vinoth.ramesh@valuemomentum.com"
+    email_address           = var.email_id
     use_common_alert_schema = true
   }
 
