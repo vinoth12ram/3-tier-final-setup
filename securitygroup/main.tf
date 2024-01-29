@@ -76,6 +76,13 @@ resource "azurerm_network_security_group" "app-nsg" {
     }
 }
 
+# Added after validate the code
+
+resource "azurerm_subnet_network_security_group_association" "app-nsg-subnet" {
+  subnet_id                 = var.app_subnet_id
+  network_security_group_id = azurerm_network_security_group.app-nsg.id
+}
+
 resource "azurerm_network_security_group" "db-nsg" {
     name = var.db_nsg-name
     location = var.location
