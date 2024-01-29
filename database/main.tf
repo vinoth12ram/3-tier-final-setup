@@ -9,6 +9,21 @@ resource "azurerm_mssql_server" "primary" {
     minimum_tls_version          = "1.2"  # Changed After Scanning
 }
 
+#Added After scanning
+
+data "azurerm_storage_account" "this" {
+  name                = "dojostorage1"
+  resource_group_name = var.resource_group
+}
+
+resource "azurerm_mssql_server_extended_auditing_policy" "this" {
+  server_id                               = azurerm_mssql_server.primary.id
+  storage_endpoint                        = azurerm_storage_account.this.primary_blob_endpoint
+  storage_account_access_key              = azurerm_storage_account.this.primary_access_key
+  storage_account_access_key_is_secondary = false
+  retention_in_days                       = 90
+}
+
 resource "azurerm_mssql_database" "db" {
   name              = var.db_name
   server_id         = azurerm_mssql_server.primary.id
