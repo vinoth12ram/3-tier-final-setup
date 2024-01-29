@@ -12,4 +12,9 @@ resource "azurerm_mssql_server" "primary" {
 resource "azurerm_mssql_database" "db" {
   name              = var.db_name
   server_id         = azurerm_mssql_server.primary.id
+  zone_redundant    = true
+
+    lifecycle {
+    prevent_destroy = true
+  }
 }
