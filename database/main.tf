@@ -20,7 +20,7 @@ resource "azurerm_mssql_server_extended_auditing_policy" "this" {
   server_id                               = azurerm_mssql_server.primary.id
   storage_endpoint                        = azurerm_storage_account.this.primary_blob_endpoint
   storage_account_access_key              = azurerm_storage_account.this.primary_access_key
-  storage_account_access_key_is_secondary = false
+  storage_account_access_key_is_secondary = true
   retention_in_days                       = 90
 }
 
