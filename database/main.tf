@@ -5,16 +5,16 @@ resource "azurerm_mssql_server" "primary" {
     version = var.primary_database_version
     administrator_login = var.primary_database_admin
     administrator_login_password = var.primary_database_password
-    public_network_access_enabled = false # Requires for After Scanning
-    minimum_tls_version          = "1.2"  # Requires for After Scanning
+    public_network_access_enabled = false # Changed After Scanning
+    minimum_tls_version          = "1.2"  # Changed After Scanning
 }
 
 resource "azurerm_mssql_database" "db" {
   name              = var.db_name
   server_id         = azurerm_mssql_server.primary.id
-  zone_redundant    = true                # Requires for After Scanning
+  zone_redundant    = true                # Changed After Scanning
 
-    lifecycle {                           # Requires for After Scanning
-    prevent_destroy = true
-  }
+  #  lifecycle {                           # Changed After Scanning
+  #  prevent_destroy = true
+  #}
 }
