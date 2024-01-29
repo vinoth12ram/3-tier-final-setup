@@ -7,8 +7,10 @@ vnet_name                 = "dojo_vnet"
 web_subnet_name           = "dojo_web_snet"
 app_subnet_name           = "dojo_app_snet"
 db_subnet_name            = "dojo_db_snet"
-pip_name_db               = "dojo_db_pip"
-pip_name_app              = "dojo_app_pip"
+pip_name_db               = "dojo_db_pip"  # Added after validate code
+pip_name_app              = "dojo_app_pip" # Added after validate code
+nat_gw_app                = "dojo_nat_gw_app" # Added after validate code
+nat_gw_db                 = "dojo_nat_gw_db" # Added after validate code
 
 win_vm_count              = 2
 web_availibility_set      = "dojo_web_set"
