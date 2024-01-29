@@ -7,6 +7,8 @@ vnet_name                 = "dojo_vnet"
 web_subnet_name           = "dojo_web_snet"
 app_subnet_name           = "dojo_app_snet"
 db_subnet_name            = "dojo_db_snet"
+pip_name_db               = "dojo_db_pip"
+pip_name_app              = "dojo_app_pip"
 
 win_vm_count              = 2
 web_availibility_set      = "dojo_web_set"
