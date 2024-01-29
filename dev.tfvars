@@ -41,6 +41,6 @@ lb_name                   = "dojo_lb"
 lb_pip_name               = "dojo_lb_pip"
 backend_addr_pool         = "dojo_backend_addr_pool"
 
-vpn_pip_name              = "dojo_vpn_pip"
-vir_nw_gw                 = "dojo_vir_nw_gw"
+#vpn_pip_name              = "dojo_vpn_pip"
+#vir_nw_gw                 = "dojo_vir_nw_gw"
 
