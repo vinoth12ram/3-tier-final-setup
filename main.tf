@@ -97,6 +97,7 @@ module "monitor" {
   web_vm_id = [module.monitor[count.index].web_vm_id]
   app_vm_id = [module.monitor[count.index].app_vm_id]
   resource_group  = data.azurerm_resource_group.this.name
+  email_id = var.email_id
 }
 
 #module "vpn" {
