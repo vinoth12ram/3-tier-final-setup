@@ -34,8 +34,10 @@ module "networking" {
   web_subnet_name = "${var.env}-${var.web_subnet_name}"
   app_subnet_name = "${var.env}-${var.app_subnet_name}"
   db_subnet_name  = "${var.env}-${var.db_subnet_name}"
-  pip_name_app = "${var.env}-${pip_name_app}"
-  pip_name_db ="${var.env}-${var.pip_name_db}"
+  pip_name_app = "${var.env}-${var.pip_name_app}" #Added After validate code
+  pip_name_db ="${var.env}-${var.pip_name_db}"    #Added After validate code
+  nat_gw_app = "${var.env}-${var.nat_gw_app}"     #Added After validate code
+  nat_gw_db = "${var.env}-${var.nat_gw_db}"       #Added After validate code
 }
 
 module "compute" {
