@@ -84,7 +84,7 @@ resource "azurerm_subnet_network_security_group_association" "app-nsg-subnet" {
 }
 
 resource "azurerm_network_security_group" "db-nsg" {
-    name = var.db_nsg-name
+    name = var.db-nsg-name  # Altered after validate the code
     location = var.location
     resource_group_name = var.resource_group
 
