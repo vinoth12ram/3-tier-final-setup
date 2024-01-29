@@ -9,7 +9,7 @@ resource "azurerm_network_security_group" "web-nsg" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_address_prefix      = "*"
+    source_address_prefix      = "0.0.0.0" #Changed After Scanning
     source_port_range          = "*"
     destination_address_prefix = "*"
     destination_port_range     = "3389"
