@@ -72,6 +72,9 @@ module "securitygroup" {
   web-nsg-name = "${var.env}-${var.web-nsg-name}"
   app-nsg-name = "${var.env}-${var.app-nsg-name}"
   db-nsg-name = "${var.env}-${var.db-nsg-name}"
+  web_subnet_id  = module.networking.web_subnet_id     #Added After validate code
+  app_subnet_id  = module.networking.app_subnet_id     #Added After validate code
+  db_subnet_id   = module.networking.db_subnet_id      #Added After validate code
 
 }
 
