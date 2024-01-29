@@ -5,6 +5,7 @@ resource "azurerm_mssql_server" "primary" {
     version = var.primary_database_version
     administrator_login = var.primary_database_admin
     administrator_login_password = var.primary_database_password
+    public_network_access_enabled = false
 }
 
 resource "azurerm_mssql_database" "db" {
