@@ -44,3 +44,4 @@ backend_addr_pool         = "dojo_backend_addr_pool"
 #vpn_pip_name              = "dojo_vpn_pip"
 #vir_nw_gw                 = "dojo_vir_nw_gw"
 
+email_id                   = "vinoth.ramesh@valuemomentum.com"
