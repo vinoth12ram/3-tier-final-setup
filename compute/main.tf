@@ -37,6 +37,9 @@ resource "azurerm_windows_virtual_machine" "web-vm" {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
+  
+  encryption_at_host_enabled = true #Added After Scanning     
+
 }
   
   
@@ -80,6 +83,8 @@ resource "azurerm_windows_virtual_machine" "app-vm" {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }  
+   
+  encryption_at_host_enabled = true #Added After Scanning    
 
 }
 
