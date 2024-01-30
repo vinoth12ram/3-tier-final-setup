@@ -101,9 +101,9 @@ module "loadbalancer" {
 
 module "monitor" {
   source = "./monitor"
-  count     = "${var.win_vm_count}"                   #Added After validate code
-  web_vm_id = [module.monitor[count.index].web_vm_id] #Changed After validate code
-  app_vm_id = [module.monitor[count.index].app_vm_id] #Changed After validate code
+  #count     = "${var.win_vm_count}"                   #Added After validate code
+  web_vm_id = [module.monitor.web_vm_id] #Changed After validate code
+  app_vm_id = [module.monitor.app_vm_id] #Changed After validate code
   resource_group  = data.azurerm_resource_group.this.name
   email_id = var.email_id
 }
