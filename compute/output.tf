@@ -1,7 +1,7 @@
-#output "web_net_id" {
-#  value = azurerm_network_interface.web-net-interface.id
-#  description = "Id of web interface in the network"
-#}
+output "web_net_id" {
+  value = azurerm_network_interface.web-net-interface.id
+  description = "Id of web interface in the network"
+}
 
 #output "app_net_id" {
 #  value = azurerm_network_interface.app-net-interface.id
