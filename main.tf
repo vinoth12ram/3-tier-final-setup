@@ -69,6 +69,8 @@ module "compute" {
 
 module "securitygroup" {
   source = "./securitygroup"
+  location        = data.azurerm_resource_group.this.location
+  resource_group  = data.azurerm_resource_group.this.name
   web-nsg-name = "${var.env}-${var.web-nsg-name}"
   app-nsg-name = "${var.env}-${var.app-nsg-name}"
   db-nsg-name = "${var.env}-${var.db-nsg-name}"
