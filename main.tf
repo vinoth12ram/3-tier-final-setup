@@ -101,6 +101,7 @@ module "loadbalancer" {
 
 module "monitor" {
   source = "./monitor"
+  vm_count   = "${var.vm_count}"
   #count     = "${var.win_vm_count}"                   #Added After validate code
   web_vm_id = [module.monitor.web_vm_id] #Changed After validate code
   app_vm_id = [module.monitor.app_vm_id] #Changed After validate code
