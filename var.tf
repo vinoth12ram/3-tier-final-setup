@@ -52,6 +52,11 @@ variable "db_subnet_name" {
     type = string
 }
 
+variable "pip_name_app" {}
+variable "pip_name_db" {}
+variable "nat_gw_app" {}
+variable "nat_gw_db" {}
+
 variable "web_net_id" {
   description = "Id of web interface in the network"
   type = string
