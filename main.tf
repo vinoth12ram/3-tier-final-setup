@@ -26,7 +26,6 @@ module "networking" {
   source          = "./networking"
   location        = data.azurerm_resource_group.this.location
   resource_group  = data.azurerm_resource_group.this.name
-  count = "${var.pri_linux_instance_count}" #Added After validate code
   vnetcidr        = var.vnetcidr
   websubnetcidr   = var.websubnetcidr
   appsubnetcidr   = var.appsubnetcidr
@@ -102,6 +101,7 @@ module "loadbalancer" {
 
 module "monitor" {
   source = "./monitor"
+  count     = "${var.win_vm_count}"                   #Added After validate code
   web_vm_id = [module.compute[count.index].web_vm_id] #Changed After validate code
   app_vm_id = [module.compute[count.index].app_vm_id] #Changed After validate code
   resource_group  = data.azurerm_resource_group.this.name
