@@ -26,6 +26,7 @@ module "networking" {
   source          = "./networking"
   location        = data.azurerm_resource_group.this.location
   resource_group  = data.azurerm_resource_group.this.name
+  count = "${var.pri_linux_instance_count}" #Added After validate code
   vnetcidr        = var.vnetcidr
   websubnetcidr   = var.websubnetcidr
   appsubnetcidr   = var.appsubnetcidr
