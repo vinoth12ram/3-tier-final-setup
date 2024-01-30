@@ -63,8 +63,8 @@ module "compute" {
   ipconfig_web_name     = "${var.env}-${var.ipconfig_web_name}"
   vm_size               = var.vm_size
   os_type               = var.os_type
-  #web_net_id = [module.compute[count.index].web_net_id]
-  #app_net_id = [module.compute[count.index].app_net_id]
+  web_net_id = [module.compute.web_net_id]
+  app_net_id = [module.compute.app_net_id]
 }
 
 module "securitygroup" {
