@@ -12,9 +12,10 @@ resource "azurerm_monitor_action_group" "email-alert" {
 }
 
 resource "azurerm_monitor_metric_alert" "cpu-alert-web-vms" {
+  count               = var.vm_count
   name                = "cpu-metricalert-webvms"
   resource_group_name = var.resource_group
-  scopes              = [var.web_vm_id]
+  scopes              = [var.web_vm_id[count.index]]
   description         = "Action will be triggered when CPU Threshold is greater than 90."
 
   criteria {
@@ -32,9 +33,10 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-web-vms" {
 }
 
 resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
+  count               = var.vm_count
   name                = "cpu-metricalert-appvms"
   resource_group_name = var.resource_group
-  scopes              = [var.app_vm_id]
+  scopes              = [var.app_vm_id[count.index]]
   description         = "Action will be triggered when CPU Threshold is greater than 90."
 
   criteria {
@@ -53,9 +55,10 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
 }
 
 resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
+  count               = var.vm_count
   name                = "memory-metricalert-webvms"
   resource_group_name = var.resource_group
-  scopes              = [var.web_vm_id]
+  scopes              = [var.web_vm_id[count.index]]
   description         = "Action will be triggered when Memory Threshold is greater than 80."
 
   criteria {
@@ -74,9 +77,10 @@ resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
 }
 
 resource "azurerm_monitor_metric_alert" "memory-alert-app-vms" {
+  count               = var.vm_count
   name                = "memory-metricalert-appvms"
   resource_group_name = var.resource_group
-  scopes              = [var.app_vm_id]
+  scopes              = [var.app_vm_id[count.index]]
   description         = "Action will be triggered when Memory Threshold is greater than 80."
 
   criteria {
