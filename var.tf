@@ -52,11 +52,11 @@ variable "db_subnet_name" {
     type = string
 }
 
-#variable "web_net_id" {
-#  description = "Id of web interface in the network"
-#  type = string
-#  default = ""
-#}
+variable "web_net_id" {
+  description = "Id of web interface in the network"
+  type = string
+  default = ""
+}
 
 #variable "app_net_id" {
 #  description = "Id of app interface in the network"
