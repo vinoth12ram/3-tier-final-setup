@@ -9,12 +9,12 @@ output "app_net_id" {
 }
 
 output "web_vm_id" {
-  value = azurerm_windows_virtual_machine.web-vm.id
+  value = azurerm_windows_virtual_machine.web-vm[count.index].id
   description = "Id of web vm"
 }
 
 output "app_vm_id" {
-  value = azurerm_windows_virtual_machine.app-vm.id
+  value = azurerm_windows_virtual_machine.app-vm[count.index].id
   description = "Id of app vm"
 }
 
