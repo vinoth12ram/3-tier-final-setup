@@ -103,8 +103,8 @@ module "monitor" {
   source = "./monitor"
   vm_count   = "${var.vm_count}"
   #count     = "${var.win_vm_count}"                   #Added After validate code
-  web_vm_id = [module.monitor.web_vm_id] #Changed After validate code
-  app_vm_id = [module.monitor.app_vm_id] #Changed After validate code
+  web_vm_id = module.compute.web_vm_id #Changed After validate code
+  app_vm_id = module.compute.app_vm_id #Changed After validate code
   resource_group  = data.azurerm_resource_group.this.name
   email_id = var.email_id
 }
