@@ -13,9 +13,8 @@ variable "env" {
     type = string
 }
 
-variable "win_vm_count" {
-  description = "Number of Windows Instances"
-  type = number
+variable "vm_count" {
+  description = "The number of Windows VM instances to create."
   default = 3
 }
 
