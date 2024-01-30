@@ -17,10 +17,11 @@ resource "azurerm_network_interface" "web-net-interface" {
 }
 
 resource "azurerm_windows_virtual_machine" "web-vm" {
+  count = var.vm_count
   name = "${var.web_win_vm}-${count.index}"
   location = var.location
   resource_group_name = var.resource_group
-  network_interface_ids = [var.web_net_id]
+  network_interface_ids = [azurerm_network_interface.web-net-interface[count.index].id]
   admin_username = var.web_username
   admin_password = var.web_os_password
   availability_set_id = azurerm_availability_set.web_availabilty_set.id
@@ -64,12 +65,13 @@ resource "azurerm_network_interface" "app-net-interface" {
 }
 
 resource "azurerm_windows_virtual_machine" "app-vm" {
+  count = var.vm_count
   name = "${var.app_win_vm}-${count.index}"
   location = var.location
   resource_group_name = var.resource_group
   admin_username = var.app_username
   admin_password = var.app_os_password
-  network_interface_ids = [var.app_net_id]
+  network_interface_ids = [azurerm_network_interface.app-net-interface[count.index].id]
   availability_set_id = azurerm_availability_set.web_availabilty_set.id
   size = var.vm_size
 
