@@ -3,10 +3,10 @@ output "web_net_id" {
   description = "Id of web interface in the network"
 }
 
-output "app_net_id" {
-  value = module.compute.app_net_id
-  description = "Id of app interface in the network"
-}
+#output "app_net_id" {
+#  value = module.compute.app_net_id
+#  description = "Id of app interface in the network"
+#}
 
 output "web_subnet_id" {
   value = module.networking.web_subnet_id
