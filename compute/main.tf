@@ -17,7 +17,7 @@ resource "azurerm_network_interface" "web-net-interface" {
 }
 
 resource "azurerm_windows_virtual_machine" "web-vm" {
-  name = var.web_win_vm
+  name = "${var.web_win_vm}-${count.index}"
   location = var.location
   resource_group_name = var.resource_group
   network_interface_ids = [var.web_net_id]
@@ -64,7 +64,7 @@ resource "azurerm_network_interface" "app-net-interface" {
 }
 
 resource "azurerm_windows_virtual_machine" "app-vm" {
-  name = var.app_win_vm
+  name = "${var.app_win_vm}-${count.index}"
   location = var.location
   resource_group_name = var.resource_group
   admin_username = var.app_username
