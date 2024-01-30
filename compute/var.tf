@@ -19,8 +19,8 @@ variable "ipconfig_web_name" {}
 variable "vm_size" {}
 variable "os_type" {}
 
-variable "web_net_id" {}
-variable "app_net_id" {}
+#variable "web_net_id" {}
+#variable "app_net_id" {}
 
 variable "vm_count" {
   description = "The number of Windows VM instances to create."
