@@ -200,14 +200,14 @@ variable "backend_addr_pool" {
 }
 
 
-#variable "web_vm_id" {
-#  description = "Id of web vms"
-#  type = list(string)
-#}
+variable "web_vm_id" {
+  description = "Id of web vms"
+  type = string
+}
 #variable "app_vm_id" {
-#  description = "Id of app vms"
-#  type = list(string)
-#}
+  description = "Id of app vms"
+  type = string
+}
 
 #variable "vpn_pip_name" {}
 #variable "vir_nw_gw" {}
