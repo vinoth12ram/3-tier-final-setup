@@ -36,26 +36,38 @@ variable "dbsubnetcidr" {
 }
 
 variable "vnet_name" {
-        default ="dojo-vnet"
+    default ="dojo-vnet"
     type = string
 }
 variable "web_subnet_name" {
-        default ="dojo-web-snet"
+    default ="dojo-web-snet"
     type = string
 }
 variable "app_subnet_name" {
-        default ="dojo-app-snet"
+    default ="dojo-app-snet"
     type = string
 }
 variable "db_subnet_name" {
-        default ="dojo-db-snet"
+    default ="dojo-db-snet"
     type = string
 }
 
-variable "pip_name_app" {}
-variable "pip_name_db" {}
-variable "nat_gw_app" {}
-variable "nat_gw_db" {}
+variable "pip_name_app" {
+    default ="dojo-pip-app"
+    type = string
+}
+variable "pip_name_db" {
+    default ="dojo-pip-db"
+    type = string
+}
+variable "nat_gw_app" {
+    default ="dojo_nat_gw_app"
+    type = string
+}
+variable "nat_gw_db" {
+    default ="dojo_nat_gw_db"
+    type = string
+}
 
 variable "web_net_id" {
   description = "Id of web interface in the network"
