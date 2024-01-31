@@ -17,7 +17,7 @@ resource "azurerm_network_interface" "web-net-interface" {
 }
 
 resource "azurerm_windows_virtual_machine" "web-vm" {
-  count = var.vm_count
+  count = "${var.vm_count}"
   name = "${var.web_win_vm}-${count.index}"
   location = var.location
   resource_group_name = var.resource_group
@@ -65,7 +65,7 @@ resource "azurerm_network_interface" "app-net-interface" {
 }
 
 resource "azurerm_windows_virtual_machine" "app-vm" {
-  count = var.vm_count
+  count = "${var.vm_count}"
   name = "${var.app_win_vm}-${count.index}"
   location = var.location
   resource_group_name = var.resource_group
