@@ -93,6 +93,7 @@ module "database" {
 
 module "loadbalancer" {
   source = "./loadbalancer"
+  vm_count              = "${var.vm_count}"
   lb_pip_name = "${var.env}-${var.lb_pip_name}"
   lb_name = "${var.env}-${var.lb_name}"
   backend_addr_pool = "${var.env}-${var.backend_addr_pool}"
