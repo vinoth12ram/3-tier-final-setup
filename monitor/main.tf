@@ -12,7 +12,7 @@ resource "azurerm_monitor_action_group" "email-alert" {
 }
 
 resource "azurerm_monitor_metric_alert" "cpu-alert-web-vms" {
-  count               = var.vm_count
+  count               = "${var.vm_count}"
   name                = "cpu-metricalert-webvms"
   resource_group_name = var.resource_group
   scopes              = [var.web_vm_id[count.index]]
@@ -33,7 +33,7 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-web-vms" {
 }
 
 resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
-  count               = var.vm_count
+  count               = "${var.vm_count}"
   name                = "cpu-metricalert-appvms"
   resource_group_name = var.resource_group
   scopes              = [var.app_vm_id[count.index]]
@@ -55,7 +55,7 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
 }
 
 resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
-  count               = var.vm_count
+  count               = "${var.vm_count}"
   name                = "memory-metricalert-webvms"
   resource_group_name = var.resource_group
   scopes              = [var.web_vm_id[count.index]]
@@ -77,7 +77,7 @@ resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
 }
 
 resource "azurerm_monitor_metric_alert" "memory-alert-app-vms" {
-  count               = var.vm_count
+  count               = "${var.vm_count}"
   name                = "memory-metricalert-appvms"
   resource_group_name = var.resource_group
   scopes              = [var.app_vm_id[count.index]]
