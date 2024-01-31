@@ -23,7 +23,7 @@ variable "vnetcidr" {
     type = string
 }
 variable "websubnetcidr" {
-    default ="10.0.1.0/24"
+    default = "10.0.1.0/24"
     type = string
 }
 variable "appsubnetcidr" {
@@ -81,48 +81,142 @@ variable "web_net_id" {
 #  default = ""
 #}
 
-variable "web_subnet_id" {}
-variable "app_subnet_id" {}
+variable "web_subnet_id" {
+  description = "Id of web vms subnet"
+  type = string
+  default = ""
+}
+variable "app_subnet_id" {
+  description = "Id of app vms subnet"
+  type = string
+  default = ""
+}
+
 #variable "web_host_name"{}
-variable "web_username" {}
-variable "web_os_password" {}
+
+variable "web_username" {
+    default ="dojo_web_user"
+    type = string
+}
+variable "web_os_password" {
+    default ="@Webuser1"
+    type = string
+}
 #variable "app_host_name"{}
-variable "app_username" {}
-variable "app_os_password" {}
-variable "web_availibility_set" {}
-variable "web_network_interface" {}
-variable "web_win_vm" {}
-variable "app_availibility_set" {}
-variable "app_network_interface" {}
-variable "app_win_vm" {}
-variable "ipconfig_app_name" {}
-variable "ipconfig_web_name" {}
-variable "vm_size" {}
-variable "os_type" {}
+variable "app_username" {
+    default ="dojo_app_user"
+    type = string
+}
+variable "app_os_password" {
+    default ="@Appuser1"
+    type = string
+}
+variable "web_availibility_set" {
+    default ="dojo_web_set"
+    type = string
+}
+variable "web_network_interface" {
+    default ="dojo_web_net"
+    type = string
+}
+variable "web_win_vm" {
+    default ="dojo_web_win"
+    type = string
+}
+variable "app_availibility_set" {
+    default ="dojo_app_set"
+    type = string
+}
+variable "app_network_interface" {
+    default ="dojo_app_net"
+    type = string
+}
+variable "app_win_vm" {
+    default ="dojo_app_win"
+    type = string
+}
+variable "ipconfig_app_name" {
+    default ="ip_conf_app"
+    type = string
+}
+variable "ipconfig_web_name" {
+    default ="dojo_app_win"
+    type = string
+}
+variable "vm_size" {
+    default ="Standard_D2s_v4"
+    type = string
+}
+variable "os_type" {
+    default ="2019-Datacenter"
+    type = string
+}
 
-variable "web-nsg-name" {}
-variable "app-nsg-name" {}
-variable "db-nsg-name" {}
+variable "web-nsg-name" {
+    default ="dojo-web-nsg"
+    type = string
+}
+variable "app-nsg-name" {
+    default ="dojo-app-nsg"
+    type = string
+}
+variable "db-nsg-name" {
+    default ="dojo-db-nsg"
+    type = string
+}
+variable "primary_database" {
+    default ="dojo-master-db"
+    type = string
+}
+variable "primary_database_version" {
+    default ="22.0"
+    type = string
+}
+variable "primary_database_admin" {
+    default ="sqladmin"
+    type = string
+}
+variable "primary_database_password" {
+    default ="pa$$w0rd"
+    type = string
+}
+variable "db_name" {
+    default ="dojo-db"
+    type = string
+}
 
 
-variable "primary_database" {}
-variable "primary_database_version" {}
-variable "primary_database_admin" {}
-variable "primary_database_password" {}
-variable "db_name" {}
+variable "lb_name" {
+    default ="dojo_lb"
+    type = string
+}
+variable "lb_pip_name" {
+    default ="dojo_lb_pip"
+    type = string
+}
+variable "backend_addr_pool" {
+    default ="dojo_backend_addr_pool"
+    type = string
+}
 
 
-variable "lb_name" {}
-variable "lb_pip_name" {}
-variable "backend_addr_pool" {}
-
-
-variable "web_vm_id" {}
-variable "app_vm_id" {}
+variable "web_vm_id" {
+  description = "Id of web vms"
+  type = string
+  default = ""
+}
+variable "app_vm_id" {
+  description = "Id of app vms"
+  type = string
+  default = ""
+}
 
 #variable "vpn_pip_name" {}
 #variable "vir_nw_gw" {}
 
 #variable "vpn_client_root_cert_path" {}
 
-variable "email_id" {}
+variable "email_id" {
+    default ="vinoth.ramesh@valuemomentum.com"
+    type = string
+}
