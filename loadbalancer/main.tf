@@ -44,7 +44,7 @@ resource "azurerm_lb_rule" "this" {
 
 resource "azurerm_network_interface_backend_address_pool_association" "example" {
   count               = "${var.vm_count}"
-  network_interface_id    = [var.web_net_id[count.index]]
+  network_interface_ids    = [var.web_net_id[count.index]]
   ip_configuration_name   = "testconfiguration1"
   backend_address_pool_id = azurerm_lb_backend_address_pool.this.id
 }
