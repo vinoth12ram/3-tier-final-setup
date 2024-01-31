@@ -43,7 +43,8 @@ resource "azurerm_lb_rule" "this" {
 # Connect VMs to Load Balancer Backend Pool
 
 resource "azurerm_network_interface_backend_address_pool_association" "example" {
-  network_interface_id    = var.web_net_id
+  count               = "${var.vm_count}"
+  network_interface_id    = [var.web_net_id[count.index]]
   ip_configuration_name   = "testconfiguration1"
   backend_address_pool_id = azurerm_lb_backend_address_pool.this.id
 }
