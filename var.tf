@@ -203,11 +203,13 @@ variable "backend_addr_pool" {
 variable "web_vm_id" {
   description = "Id of web vms"
   type = string
+  default = ""
 }
 
 variable "app_vm_id" {
   description = "Id of app vms"
   type = string
+  default = ""
 }
 
 #variable "vpn_pip_name" {}
