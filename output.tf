@@ -24,12 +24,12 @@ output "db_subnet_id" {
 }
 
 output "web_vm_id" {
-  value = module.compute.web_vm_id
+  value = module.compute.web_vm_id[*]
   description = "Id of web vm"
 }
 
 output "app_vm_id" {
-  value = module.compute.app_vm_id
+  value = module.compute.app_vm_id[*]
   description = "Id of app vm"
 }
 
