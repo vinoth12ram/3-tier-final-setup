@@ -202,12 +202,12 @@ variable "backend_addr_pool" {
 
 variable "web_vm_id" {
   description = "Id of web vms"
-  type = string
+  type = list(string)
   default = ""
 }
 variable "app_vm_id" {
   description = "Id of app vms"
-  type = string
+  type = list(string)
   default = ""
 }
 
