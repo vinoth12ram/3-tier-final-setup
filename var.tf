@@ -204,7 +204,8 @@ variable "web_vm_id" {
   description = "Id of web vms"
   type = string
 }
-#variable "app_vm_id" {
+
+variable "app_vm_id" {
   description = "Id of app vms"
   type = string
 }
