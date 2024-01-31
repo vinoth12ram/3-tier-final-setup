@@ -5,7 +5,8 @@ resource "azurerm_availability_set" "web_availabilty_set" {
 }
 
 resource "azurerm_network_interface" "web-net-interface" {
-    name = var.web_network_interface
+    count = "${var.vm_count}"
+    name = "${var.web_network_interface}-${count.index+1}"
     resource_group_name = var.resource_group
     location = var.location
 
@@ -18,7 +19,7 @@ resource "azurerm_network_interface" "web-net-interface" {
 
 resource "azurerm_windows_virtual_machine" "web-vm" {
   count = "${var.vm_count}"
-  name = "${var.web_win_vm}-${count.index}"
+  name = "${var.web_win_vm}-${count.index+1}"
   location = var.location
   resource_group_name = var.resource_group
   network_interface_ids = [azurerm_network_interface.web-net-interface[count.index].id]
@@ -52,8 +53,8 @@ resource "azurerm_windows_virtual_machine" "web-vm" {
  }
 
 resource "azurerm_network_interface" "app-net-interface" {
-    count = var.vm_count
-    name = var.app_network_interface
+    count = "${var.vm_count}"
+    name = "${var.app_network_interface}-${count.index+1}"
     resource_group_name = var.resource_group
     location = var.location
 
@@ -66,7 +67,7 @@ resource "azurerm_network_interface" "app-net-interface" {
 
 resource "azurerm_windows_virtual_machine" "app-vm" {
   count = "${var.vm_count}"
-  name = "${var.app_win_vm}-${count.index}"
+  name = "${var.app_win_vm}-${count.index+1}"
   location = var.location
   resource_group_name = var.resource_group
   admin_username = var.app_username
