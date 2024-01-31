@@ -169,7 +169,7 @@ variable "primary_database" {
     type = string
 }
 variable "primary_database_version" {
-    default ="22.0"
+    default ="15.0"
     type = string
 }
 variable "primary_database_admin" {
