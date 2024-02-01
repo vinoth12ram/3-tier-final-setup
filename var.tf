@@ -95,7 +95,7 @@ variable "app_subnet_id" {
 #variable "web_host_name"{}
 
 variable "web_username" {
-    default ="dojo_web_people"
+    default ="dojowebpeople"
     type = string
 }
 variable "web_os_password" {
@@ -104,7 +104,7 @@ variable "web_os_password" {
 }
 #variable "app_host_name"{}
 variable "app_username" {
-    default ="dojo_app_people"
+    default ="dojoapppeople"
     type = string
 }
 variable "app_os_password" {
