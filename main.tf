@@ -47,10 +47,10 @@ module "compute" {
   vm_count              = "${var.vm_count}"
   web_availibility_set  = "${var.env}-${var.web_availibility_set}"
   web_network_interface = "${var.env}-${var.web_network_interface}"
-  web_win_vm            = "${var.env}-${var.web_win_vm}"
+  web_win_vm            = var.web_win_vm
   app_availibility_set  = "${var.env}-${var.app_availibility_set}"
   app_network_interface = "${var.env}-${var.app_network_interface}"
-  app_win_vm            = "${var.env}-${var.app_win_vm}"
+  app_win_vm            = var.app_win_vm
   web_subnet_id         = module.networking.web_subnet_id
   app_subnet_id         = module.networking.app_subnet_id
   #web_host_name         = "${var.env}-${var.web_host_name}"
