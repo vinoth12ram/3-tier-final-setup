@@ -95,8 +95,16 @@ variable "app_subnet_id" {
 #variable "web_host_name"{}
 
 variable "web_username" {
+
     default ="dojowebpeople"
-    type = substr(string, 0, 15) 
+    #type = substr(string, 0, 15) 
+    type        = string
+  description = "An example string variable with a maximum length"
+  
+  validation {
+    condition     = length(var.web_username) <= 15 
+    error_message = "The length of example_variable must be 15 characters or less."
+  }
 }
 variable "web_os_password" {
     default ="@Webuser1"
