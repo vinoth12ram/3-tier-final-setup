@@ -38,7 +38,7 @@ os_type                   = "2022-Datacenter"
 #primary_database          = "sql-primary-database"    # Commented after validate code
 #primary_database_admin    = "sqladmin"                # Commented after validate code
 #primary_database_password = "pa$$w0rd"                # Commented after validate code
-primary_database_version  = "15.0"
+primary_database_version  = "12.0"
 
 #clientcidr                = "121.16.0.0/24"           # Required for Manual setup
 #lb_name                   = "dojo_lb"                 # Commented after validate code
