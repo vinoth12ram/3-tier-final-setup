@@ -110,11 +110,21 @@ variable "web_os_password" {
     default ="@Webuser1"
     type = string
 }
+
 #variable "app_host_name"{}
+
 variable "app_username" {
     default ="dojoapppeople"
-    type = substr(string, 0, 15) 
+   # type = substr(string, 0, 15) 
+    type        = string
+  description = "An example string variable with a maximum length"
+  
+  validation {
+    condition     = length(var.app_username) <= 15 
+    error_message = "The length of example_variable must be 15 characters or less."
+  }
 }
+
 variable "app_os_password" {
     default ="@Appuser1"
     type = string
