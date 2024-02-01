@@ -5,7 +5,7 @@ resource "azurerm_availability_set" "web_availabilty_set" {
 }
 
 resource "azurerm_network_interface" "web-net-interface" {
-    count = "${var.vm_count}"
+    count = var.vm_count
     name = "${var.web_network_interface}-${count.index+1}"
     resource_group_name = var.resource_group
     location = var.location
@@ -18,7 +18,7 @@ resource "azurerm_network_interface" "web-net-interface" {
 }
 
 resource "azurerm_windows_virtual_machine" "web-vm" {
-  count = "${var.vm_count}"
+  count = var.vm_count
   name = "${var.web_win_vm}-${count.index+1}"
   location = var.location
   resource_group_name = var.resource_group
@@ -53,7 +53,7 @@ resource "azurerm_windows_virtual_machine" "web-vm" {
  }
 
 resource "azurerm_network_interface" "app-net-interface" {
-    count = "${var.vm_count}"
+    count = var.vm_count
     name = "${var.app_network_interface}-${count.index+1}"
     resource_group_name = var.resource_group
     location = var.location
@@ -66,7 +66,7 @@ resource "azurerm_network_interface" "app-net-interface" {
 }
 
 resource "azurerm_windows_virtual_machine" "app-vm" {
-  count = "${var.vm_count}"
+  count = var.vm_count
   name = "${var.app_win_vm}-${count.index+1}"
   location = var.location
   resource_group_name = var.resource_group
