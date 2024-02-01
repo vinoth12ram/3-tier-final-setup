@@ -100,6 +100,7 @@ module "loadbalancer" {
   web_net_id = module.compute.web_net_id
   location        = data.azurerm_resource_group.this.location
   resource_group  = data.azurerm_resource_group.this.name
+  ipconfig_web_name   = "${var.env}-${var.ipconfig_web_name}"
 }
 
 module "monitor" {
