@@ -138,7 +138,7 @@ variable "web_network_interface" {
     type = string
 }
 variable "web_win_vm" {
-    default ="dojo_web_win"
+    default ="dojo-web-win"
     type = string
 }
 variable "app_availibility_set" {
@@ -150,7 +150,7 @@ variable "app_network_interface" {
     type = string
 }
 variable "app_win_vm" {
-    default ="dojo_app_win"
+    default ="dojo-app-win"
     type = string
 }
 variable "ipconfig_app_name" {
