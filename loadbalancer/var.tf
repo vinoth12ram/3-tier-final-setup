@@ -8,3 +8,4 @@ variable "web_net_id" {}
 variable "vm_count" {
   description = "The number of Windows VM instances to create."
 }
+variable "ipconfig_web_name" {}
