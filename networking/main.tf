@@ -34,6 +34,7 @@ resource "azurerm_public_ip" "this" {
   location            = var.location
   resource_group_name = var.resource_group
   allocation_method   = "Static"
+  sku                 = "Standard"
 }
 
 
@@ -63,6 +64,7 @@ resource "azurerm_public_ip" "this1" {
   location            = var.location
   resource_group_name = var.resource_group
   allocation_method   = "Static"
+  sku                 = "Standard"
 }
 
 
