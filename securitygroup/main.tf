@@ -5,7 +5,7 @@ resource "azurerm_network_security_group" "web-nsg" {
   
   security_rule {
     name                       = "rule-1"
-    priority                   = 101
+    priority                   = 102
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
