@@ -37,6 +37,7 @@ resource "azurerm_lb_rule" "this" {
   frontend_port                  = 80
   backend_port                   = 80
   frontend_ip_configuration_name = "PublicIPAddress"
+  probe_id                       = azurerm_lb_probe.this.id
 }
 
 
