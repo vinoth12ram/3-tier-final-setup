@@ -8,7 +8,7 @@ terraform {
       resource_group_name  = "DOJO"
       storage_account_name = "dojostorage1"
       container_name       = "dojo"
-      key                  = "infra.terraform.tfstate"    
+      key                  = "dojo6.terraform.tfstate"    
   }
 }
 
