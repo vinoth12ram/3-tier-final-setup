@@ -15,7 +15,7 @@ variable "env" {
 
 variable "vm_count" {
   description = "The number of Windows VM instances to create."
-  default = 3
+  default = 2
 }
 
 variable "vnetcidr" {
