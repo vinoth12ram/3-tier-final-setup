@@ -162,7 +162,7 @@ variable "ipconfig_web_name" {
     type = string
 }
 variable "vm_size" {
-    default ="Standard_D2s_v4"
+    default ="Standard_B4ls_v2"
     type = string
 }
 variable "os_type" {
