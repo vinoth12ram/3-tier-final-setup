@@ -27,7 +27,7 @@ vm_count                   = 2
 #app_os_password           = "@Appuser1"     # Commented after validate code
 #ipconfig_app_name         = "ip_conf_app"   # Commented after validate code
 #ipconfig_web_name         = "ip_conf_web"   # Commented after validate code
-vm_size                   = "Standard_D2s_v4"
+vm_size                   = "Standard_B2ms"
 os_type                   = "2022-Datacenter"
 
 #web-nsg-name              = "dojo-web-nsg"  # Commented after validate code
