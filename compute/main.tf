@@ -40,7 +40,7 @@ resource "azurerm_windows_virtual_machine" "web-vm" {
     storage_account_type = "Standard_LRS"
   }
   
-  encryption_at_host_enabled = true #Added After Scanning 
+  #encryption_at_host_enabled = true #Added After Scanning 
   allow_extension_operations = false #Added After Scanning    
 
 }
@@ -88,7 +88,7 @@ resource "azurerm_windows_virtual_machine" "app-vm" {
     storage_account_type = "Standard_LRS"
   }  
    
-  encryption_at_host_enabled = true #Added After Scanning 
+  #encryption_at_host_enabled = true #Added After Scanning 
   allow_extension_operations = false #Added After Scanning      
 
 }
