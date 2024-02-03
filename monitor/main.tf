@@ -55,19 +55,19 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
 
 }
 
-resource "azurerm_monitor_metric_alert" "diskspace-alert-web-vms" {
+resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
   count               = var.vm_count
-  name                = "diskspace-metricalert-webvms"
+  name                = "memory-metricalert-webvms"
   resource_group_name = var.resource_group
   scopes              = [var.web_vm_id[count.index]]
-  description         = "Action will be triggered when Disk Capacity is greater than 90."
+  description         = "Action will be triggered when Memory is greater than 90."
 
   criteria {
     metric_namespace = "Microsoft.Compute/virtualMachines"
-    metric_name      = "Percentage Disk Space Used"
+    metric_name      = "Available Memory Byte"
     aggregation      = "Average"
-    operator         = "GreaterThan"
-    threshold        = 90
+    operator         = "LessThan"
+    threshold        = 536870912  # Set the threshold in bytes (e.g., 512 MB)
 
   }
    action {
@@ -77,20 +77,20 @@ resource "azurerm_monitor_metric_alert" "diskspace-alert-web-vms" {
 
 }
 
-resource "azurerm_monitor_metric_alert" "diskspace-alert-app-vms" {
+resource "azurerm_monitor_metric_alert" "memory-alert-app-vms" {
   count               = var.vm_count
-  name                = "diskspace-metricalert-appvms"
+  name                = "memory-metricalert-appvms"
   resource_group_name = var.resource_group
   scopes              = [var.app_vm_id[count.index]]
-  description         = "Action will be triggered when Diskspace Threshold is greater than 90."
+  description         = "Action will be triggered when Memory Threshold is greater than 90."
 
   criteria {
 
     metric_namespace = "Microsoft.Compute/virtualMachines"
-    metric_name      = "Percentage Disk Space Used"
+    metric_name      = "Available Memory Byte"
     aggregation      = "Average"
-    operator         = "GreaterThan"
-    threshold        = 90
+    operator         = "LessThan"
+    threshold        = 536870912 # Set the threshold in bytes (e.g., 512 MB)
 
 
   }
