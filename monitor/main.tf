@@ -19,7 +19,7 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-web-vms" {
   description         = "Action will be triggered when CPU Threshold is greater than 90."
 
   criteria {
-    metric_namespace = "Microsoft.Storage/virtualMachines"
+    metric_namespace = "Microsoft.Compute/virtualMachines"
     metric_name      = "Percentage CPU"
     aggregation      = "Average"
     operator         = "GreaterThan"
@@ -40,7 +40,7 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
   description         = "Action will be triggered when CPU Threshold is greater than 90."
 
   criteria {
-    metric_namespace = "Microsoft.Storage/virtualMachines"
+    metric_namespace = "Microsoft.Compute/virtualMachines"
     metric_name      = "Percentage CPU"
     aggregation      = "Average"
     operator         = "GreaterThan"
@@ -62,7 +62,7 @@ resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
   description         = "Action will be triggered when Memory Threshold is greater than 80."
 
   criteria {
-    metric_namespace = "Microsoft.Storage/virtualMachines"
+    metric_namespace = "Microsoft.Compute/virtualMachines"
     metric_name      = "Percentage Memory"
     aggregation      = "Average"
     operator         = "GreaterThan"
@@ -84,7 +84,7 @@ resource "azurerm_monitor_metric_alert" "memory-alert-app-vms" {
   description         = "Action will be triggered when Memory Threshold is greater than 80."
 
   criteria {
-    metric_namespace = "Microsoft.Storage/virtualMachines"
+    metric_namespace = "Microsoft.Compute/virtualMachines"
     metric_name      = "Percentage Memory"
     aggregation      = "Average"
     operator         = "GreaterThan"
