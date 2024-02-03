@@ -54,19 +54,19 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
 
 }
 
-resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
+resource "azurerm_monitor_metric_alert" "network-alert-web-vms" {
   count               = var.vm_count
-  name                = "memory-metricalert-webvms"
+  name                = "network-metricalert-webvms"
   resource_group_name = var.resource_group
   scopes              = [var.web_vm_id[count.index]]
-  description         = "Action will be triggered when Memory Threshold is greater than 80."
+  description         = "Action will be triggered when Packet Threshold is greater than 100000."
 
   criteria {
-    metric_namespace = "Microsoft.Compute/virtualMachines"
-    metric_name      = "Available Memory"
-    aggregation      = "Average"
+    metric_namespace = "Microsoft.Network/networkInterfaces"
+    metric_name      = "Network In"
+    aggregation      = "Total"
     operator         = "GreaterThan"
-    threshold        = 80
+    threshold        = 100000
 
   }
    action {
@@ -76,19 +76,20 @@ resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
 
 }
 
-resource "azurerm_monitor_metric_alert" "memory-alert-app-vms" {
+resource "azurerm_monitor_metric_alert" "network-alert-app-vms" {
   count               = var.vm_count
-  name                = "memory-metricalert-appvms"
+  name                = "network-metricalert-appvms"
   resource_group_name = var.resource_group
   scopes              = [var.app_vm_id[count.index]]
-  description         = "Action will be triggered when Memory Threshold is greater than 80."
+  description         = "Action will be triggered when Packet Threshold is greater than 100000."
 
   criteria {
-    metric_namespace = "Microsoft.Compute/virtualMachines"
-    metric_name      = "Available Memory"
-    aggregation      = "Average"
-    operator         = "GreaterThan"
-    threshold        = 80
+    
+      metric_namespace = "Microsoft.Network/networkInterfaces"
+      metric_name      = "Network In"
+      aggregation      = "Total"
+      operator         = "GreaterThan"
+      threshold        = 100000
 
   }
  
