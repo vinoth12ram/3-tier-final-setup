@@ -63,7 +63,7 @@ resource "azurerm_monitor_metric_alert" "memory-alert-web-vms" {
 
   criteria {
     metric_namespace = "Microsoft.Compute/virtualMachines"
-    metric_name      = "Percentage Memory"
+    metric_name      = "Available Memory"
     aggregation      = "Average"
     operator         = "GreaterThan"
     threshold        = 80
@@ -85,7 +85,7 @@ resource "azurerm_monitor_metric_alert" "memory-alert-app-vms" {
 
   criteria {
     metric_namespace = "Microsoft.Compute/virtualMachines"
-    metric_name      = "Percentage Memory"
+    metric_name      = "Available Memory"
     aggregation      = "Average"
     operator         = "GreaterThan"
     threshold        = 80
