@@ -40,6 +40,7 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
   description         = "Action will be triggered when CPU Threshold is greater than 90."
 
   criteria {
+
     metric_namespace = "Microsoft.Compute/virtualMachines"
     metric_name      = "Percentage CPU"
     aggregation      = "Average"
@@ -54,19 +55,19 @@ resource "azurerm_monitor_metric_alert" "cpu-alert-app-vms" {
 
 }
 
-resource "azurerm_monitor_metric_alert" "network-alert-web-vms" {
+resource "azurerm_monitor_metric_alert" "diskspace-alert-web-vms" {
   count               = var.vm_count
-  name                = "network-metricalert-webvms"
+  name                = "diskspace-metricalert-webvms"
   resource_group_name = var.resource_group
   scopes              = [var.web_vm_id[count.index]]
-  description         = "Action will be triggered when Packet Threshold is greater than 100000."
+  description         = "Action will be triggered when Disk Capacity is greater than 90."
 
   criteria {
-    metric_namespace = "Microsoft.Network/networkInterfaces"
-    metric_name      = "Network In"
-    aggregation      = "Total"
+    metric_namespace = "Microsoft.Compute/virtualMachines"
+    metric_name      = "Percentage Disk Space Used"
+    aggregation      = "Average"
     operator         = "GreaterThan"
-    threshold        = 100000
+    threshold        = 90
 
   }
    action {
@@ -76,20 +77,21 @@ resource "azurerm_monitor_metric_alert" "network-alert-web-vms" {
 
 }
 
-resource "azurerm_monitor_metric_alert" "network-alert-app-vms" {
+resource "azurerm_monitor_metric_alert" "diskspace-alert-app-vms" {
   count               = var.vm_count
-  name                = "network-metricalert-appvms"
+  name                = "diskspace-metricalert-appvms"
   resource_group_name = var.resource_group
   scopes              = [var.app_vm_id[count.index]]
-  description         = "Action will be triggered when Packet Threshold is greater than 100000."
+  description         = "Action will be triggered when Diskspace Threshold is greater than 90."
 
   criteria {
-    
-      metric_namespace = "Microsoft.Network/networkInterfaces"
-      metric_name      = "Network In"
-      aggregation      = "Total"
-      operator         = "GreaterThan"
-      threshold        = 100000
+
+    metric_namespace = "Microsoft.Compute/virtualMachines"
+    metric_name      = "Percentage Disk Space Used"
+    aggregation      = "Average"
+    operator         = "GreaterThan"
+    threshold        = 90
+
 
   }
  
